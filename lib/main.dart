@@ -37,11 +37,11 @@ class App extends StatelessWidget {
         builder: (context, state) => const ColorExploreScreen(),
       ),
       GoRoute(
-        path: '/colors/:index',
+        path: '/colors/:id',
         builder: (context, state) => ColorShadeScreen(
           key: state.pageKey,
-          index: int.parse(state.params['index'] ?? '0'),
-          alpha: int.parse(state.params['alpha'] ?? '255'),
+          index: int.parse(state.params['id'] ?? '0'),
+          alpha: int.parse(state.queryParams['alpha'] ?? '255'),
         ),
       ),
     ],
